@@ -2,19 +2,17 @@
 /* Variables Thème Light */
 /* ===================== */
 :root {
-  --font-size: 14px;
+  --font-size: 16px;
   --background: #ffffff;
   --foreground: oklch(0.145 0 0);
   --card: #ffffff;
   --card-foreground: oklch(0.145 0 0);
   --primary: #030213;
   --primary-foreground: #ffffff;
-  --secondary: oklch(0.95 0.0058 264.53);
+  --secondary: #ececf0;
   --secondary-foreground: #030213;
-  --muted: #ececf0;
-  --muted-foreground: #717182;
-  --accent: #e9ebef;
-  --accent-foreground: #030213;
+  --accent: #f39c12;
+  --accent-foreground: #ffffff;
   --border: rgba(0, 0, 0, 0.1);
   --radius: 0.625rem;
 }
@@ -23,19 +21,17 @@
 /* Variables Thème Dark */
 /* ===================== */
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: #ffffff;
-  --card: oklch(0.145 0 0);
-  --card-foreground: #ffffff;
-  --primary: #ffffff;
-  --primary-foreground: #030213;
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: #ffffff;
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
+  --background: #1a1a1a;
+  --foreground: #f5f5f5;
+  --card: #222;
+  --card-foreground: #f5f5f5;
+  --primary: #f5f5f5;
+  --primary-foreground: #1a1a1a;
+  --secondary: #333;
+  --secondary-foreground: #f5f5f5;
+  --accent: #f39c12;
   --accent-foreground: #ffffff;
-  --border: oklch(0.269 0 0);
+  --border: rgba(255, 255, 255, 0.1);
 }
 
 /* ===================== */
@@ -57,7 +53,8 @@ body {
 
 h1, h2, h3 {
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  color: var(--primary);
 }
 
 p {
@@ -97,7 +94,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: var(--secondary);
+  color: var(--accent);
 }
 
 /* Hamburger */
@@ -140,20 +137,27 @@ nav ul li a:hover {
 /* Hero */
 /* ===================== */
 .hero {
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("../images/banner.jpg") center/cover no-repeat;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../images/banner.jpg") center/cover no-repeat;
   color: #fff;
   text-align: center;
   padding: 100px 20px;
+  border-bottom: 4px solid var(--accent);
 }
 
 .hero h1 {
   font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
 }
 
 .hero .btn {
   display: inline-block;
-  background: var(--secondary);
-  color: var(--secondary-foreground);
+  background: var(--accent);
+  color: var(--accent-foreground);
   padding: 12px 25px;
   border-radius: var(--radius);
   text-decoration: none;
@@ -162,7 +166,8 @@ nav ul li a:hover {
 }
 
 .hero .btn:hover {
-  background: var(--accent);
+  background: var(--secondary);
+  color: var(--secondary-foreground);
 }
 
 /* ===================== */
@@ -186,19 +191,20 @@ section {
   padding: 20px;
   border-radius: var(--radius);
   border: 1px solid var(--border);
-  box-shadow: 0 5px 10px rgba(0,0,0,0.05);
-  transition: transform 0.3s;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
 }
 
 .card strong {
   display: block;
   margin-top: 15px;
   font-size: 1.1rem;
-  color: var(--primary);
+  color: var(--accent);
 }
 
 /* ===================== */
