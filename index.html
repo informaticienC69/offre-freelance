@@ -7,12 +7,16 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+  <!-- ====== Header ====== -->
   <header>
-    <div class="logo"><img src="assets/images/logo.png" alt="FUTURA Logo"></div>
-    <div class="menu-toggle"><div></div><div></div><div></div></div>
+    <div class="logo">
+      <img src="assets/images/logo.png" alt="FUTURA Logo">
+      <span class="site-name">FUTURA PRO</span>
+    </div>
+    <div class="menu-toggle" id="menu-toggle"><div></div><div></div><div></div></div>
     <nav>
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
+      <ul id="nav-links">
+        <li><a href="index.html" class="active">Accueil</a></li>
         <li><a href="offres.html">Offres</a></li>
         <li><a href="maintenance.html">Maintenance</a></li>
         <li><a href="apropos.html">À propos</a></li>
@@ -21,27 +25,34 @@
     </nav>
   </header>
 
+  <!-- ====== Hero ====== -->
   <section class="hero">
-    <h1>Bienvenue chez FUTURA Construisez votre avenir avec Nous</h1>
-    <p>Création de sites web professionnels et gestion/administration.</p>
-    <a href="offres.html" class="btn">Voir nos offres</a>
-
-      <p>
-        FuturaPro est une startup spécialisée dans :
-      </p>
-      <ul>
-        <li>💹 Formations de base en <strong>trading</strong></li>
-        <li>🪙 Stratégies pour débuter sur les marchés <strong>cryptographiques</strong></li>
-        <li>☁️ Services d’<strong>hébergement web sécurisé</strong>, noms de domaine et DNS</li>
-        <li>🔐 Accès à des <strong>machines virtuelles cloud</strong> (Kali, Ubuntu, Debian) pour tests de cybersécurité</li>
-      </ul>
-      <p>
-        <strong>Hady Kaloga</strong> — CEO et fondateur du Groupe Futura, est un administrateur réseaux et système passionné par la sécurité informatique.
-      </p>
-
-    
+    <div class="hero-content">
+      <h1>Construisez votre avenir digital avec FUTURA PRO</h1>
+      <p>Création de sites web professionnels, gestion et services numériques innovants.</p>
+      <a href="offres.html" class="btn">Voir nos offres</a>
+    </div>
   </section>
 
+  <!-- ====== About ====== -->
+  <section class="about">
+    <h2>Qui sommes-nous ?</h2>
+    <p>
+      <strong>FUTURA PRO</strong> est une startup spécialisée dans le digital, la cybersécurité et l’hébergement web. 
+      Nous accompagnons entrepreneurs, entreprises et particuliers dans leur transformation numérique avec des solutions fiables et accessibles.
+    </p>
+    <div class="about-grid">
+      <div class="about-item">💹 Formations de base en <strong>trading</strong></div>
+      <div class="about-item">🪙 Stratégies pour les marchés <strong>cryptographiques</strong></div>
+      <div class="about-item">☁️ Services d’<strong>hébergement web sécurisé</strong>, noms de domaine et DNS</div>
+      <div class="about-item">🔐 Accès à des <strong>machines virtuelles cloud</strong> (Kali, Ubuntu, Debian) pour tests en cybersécurité</div>
+    </div>
+    <p class="ceo">
+      <strong>Hady Kaloga</strong> — CEO et fondateur du Groupe FUTURA, administrateur réseaux & systèmes passionné par la sécurité informatique.
+    </p>
+  </section>
+
+  <!-- ====== Services ====== -->
   <section>
     <h2>Nos Services</h2>
     <div class="cards">
@@ -55,14 +66,16 @@
       </div>
       <div class="card">
         <h3>Pack Pro</h3>
-        <p>Site vitrine avancé ou e-commerce basique avec paiement en ligne intégrer.</p>
+        <p>Site vitrine avancé ou e-commerce basique avec paiement en ligne intégré.</p>
       </div>
     </div>
   </section>
 
+  <!-- ====== Footer ====== -->
   <footer>
-    <p>&copy; 2025 FUTURA Pro - Tous droits réservés</p>
+    <p>&copy; 2025 FUTURA PRO - Tous droits réservés</p>
   </footer>
+
   <script src="assets/js/script.js"></script>
 </body>
 </html>
