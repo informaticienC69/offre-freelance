@@ -1,83 +1,32 @@
-/* ===================== */
-/* Variables Thème Light */
-/* ===================== */
-:root {
-  --font-size: 16px;
-  --background: #ffffff;
-  --foreground: oklch(0.145 0 0);
-  --card: #ffffff;
-  --card-foreground: oklch(0.145 0 0);
-  --primary: #030213;
-  --primary-foreground: #ffffff;
-  --secondary: #ececf0;
-  --secondary-foreground: #030213;
-  --accent: #f39c12;
-  --accent-foreground: #ffffff;
-  --border: rgba(0, 0, 0, 0.1);
-  --radius: 0.625rem;
-}
-
-/* ===================== */
-/* Variables Thème Dark */
-/* ===================== */
-.dark {
-  --background: #1a1a1a;
-  --foreground: #f5f5f5;
-  --card: #222;
-  --card-foreground: #f5f5f5;
-  --primary: #f5f5f5;
-  --primary-foreground: #1a1a1a;
-  --secondary: #333;
-  --secondary-foreground: #f5f5f5;
-  --accent: #f39c12;
-  --accent-foreground: #ffffff;
-  --border: rgba(255, 255, 255, 0.1);
-}
-
-/* ===================== */
-/* Base */
-/* ===================== */
+/* ====== Style global ====== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  font-size: var(--font-size);
-  background: var(--background);
-  color: var(--foreground);
-  font-family: "Segoe UI", sans-serif;
+  background: #f8fafc;
+  color: #444;
   line-height: 1.6;
 }
 
-h1, h2, h3 {
-  font-weight: 600;
-  margin-bottom: 15px;
-  color: var(--primary);
-}
-
-p {
-  margin-bottom: 15px;
-}
-
-/* ===================== */
-/* Navbar */
-/* ===================== */
+/* ====== Navbar ====== */
 header {
-  background: var(--primary);
-  color: var(--primary-foreground);
+  background: #1e293b; /* bleu nuit */
+  color: #fff;
+  padding: 15px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 25px;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
 header .logo img {
-  max-height: 45px;
+  max-height: 50px;
 }
 
 nav ul {
@@ -87,17 +36,111 @@ nav ul {
 }
 
 nav ul li a {
+  color: #e2e8f0; /* gris clair */
   text-decoration: none;
-  color: var(--primary-foreground);
-  font-weight: 500;
-  transition: 0.3s;
+  font-weight: 600;
+  transition: color 0.3s;
 }
 
 nav ul li a:hover {
-  color: var(--accent);
+  color: #0ea5e9; /* accent bleu */
 }
 
-/* Hamburger */
+/* ====== Hero Section ====== */
+.hero {
+  background: linear-gradient(rgba(30,41,59,0.85), rgba(30,41,59,0.85)), 
+              url("../images/banner.jpg") center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  color: #e2e8f0;
+}
+
+.hero .btn {
+  background: #0ea5e9;
+  color: #fff;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.hero .btn:hover {
+  background: #0284c7;
+}
+
+/* ====== Sections ====== */
+section {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  color: #111827;
+  font-weight: 700;
+}
+
+/* ====== Cards ====== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  border: 1px solid #e5e7eb;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  margin-bottom: 15px;
+  color: #0ea5e9; /* accent bleu */
+}
+
+.card strong {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: #1e293b;
+  font-weight: 700;
+}
+
+/* ====== Footer ====== */
+footer {
+  background: #1e293b;
+  color: #e2e8f0;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+  font-size: 0.9rem;
+}
+
+/* ====== Responsive Navbar ====== */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -107,21 +150,20 @@ nav ul li a:hover {
 .menu-toggle div {
   width: 25px;
   height: 3px;
-  background: var(--primary-foreground);
+  background: #fff;
   margin: 4px 0;
 }
 
-/* Responsive menu */
 @media (max-width: 768px) {
   nav ul {
     flex-direction: column;
-    background: var(--primary);
+    display: none;
+    background: #1e293b;
     position: absolute;
     top: 70px;
-    right: 20px;
+    right: 30px;
     padding: 15px;
-    border-radius: var(--radius);
-    display: none;
+    border-radius: 10px;
   }
 
   nav ul.showing {
@@ -131,89 +173,4 @@ nav ul li a:hover {
   .menu-toggle {
     display: flex;
   }
-}
-
-/* ===================== */
-/* Hero */
-/* ===================== */
-.hero {
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../images/banner.jpg") center/cover no-repeat;
-  color: #fff;
-  text-align: center;
-  padding: 100px 20px;
-  border-bottom: 4px solid var(--accent);
-}
-
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 25px;
-}
-
-.hero .btn {
-  display: inline-block;
-  background: var(--accent);
-  color: var(--accent-foreground);
-  padding: 12px 25px;
-  border-radius: var(--radius);
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-.hero .btn:hover {
-  background: var(--secondary);
-  color: var(--secondary-foreground);
-}
-
-/* ===================== */
-/* Sections et Cards */
-/* ===================== */
-section {
-  padding: 60px 20px;
-  max-width: 1100px;
-  margin: auto;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-}
-
-.card {
-  background: var(--card);
-  color: var(--card-foreground);
-  padding: 20px;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  box-shadow: 0 5px 10px rgba(0,0,0,0.08);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
-}
-
-.card strong {
-  display: block;
-  margin-top: 15px;
-  font-size: 1.1rem;
-  color: var(--accent);
-}
-
-/* ===================== */
-/* Footer */
-/* ===================== */
-footer {
-  background: var(--primary);
-  color: var(--primary-foreground);
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
 }
